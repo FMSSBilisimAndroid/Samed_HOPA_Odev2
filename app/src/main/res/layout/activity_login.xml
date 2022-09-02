@@ -6,11 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".LoginActivity">
 
-    <ImageView
+    <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/login_circle_1"
+        app:shapeAppearanceOverlay="@style/CircularView"
         android:layout_width="460dp"
         android:layout_height="460dp"
-        android:src="@drawable/circle_2"
+        android:src="@color/circle_2"
         android:layout_marginStart="-32dp"
         android:layout_marginTop="546dp"
         android:layout_marginBottom="-80dp"
@@ -20,11 +21,12 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
-    <ImageView
+    <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/login_circle_2"
+        app:shapeAppearanceOverlay="@style/CircularView"
         android:layout_width="460dp"
         android:layout_height="460dp"
-        app:srcCompat="@drawable/circle_2"
+        app:srcCompat="@color/circle_2"
         android:layout_marginStart="-183dp"
         android:layout_marginEnd="183dp"
         android:layout_marginBottom="253dp"
@@ -37,9 +39,10 @@
 
     <Button
         android:id="@+id/login_button"
+        style="@style/MyButtonStyle"
+        app:shapeAppearanceOverlay="@style/MyButtonStyle"
         android:layout_width="229dp"
         android:layout_height="wrap_content"
-        style="@style/MyButtonStyle"
         android:text="@string/login"
         android:layout_marginStart="131dp"
         android:layout_marginEnd="100dp"
@@ -51,8 +54,8 @@
         app:layout_constraintTop_toTopOf="@id/login_circle_1"/>
 
     <Button
-        style="@style/MyButtonStyle2"
         android:id="@+id/login_text_1"
+        style="@style/MyButtonStyle2"
         android:layout_width="wrap_content"
         android:layout_height="25dp"
         android:background="@android:color/transparent"
@@ -83,8 +86,8 @@
         app:layout_constraintTop_toTopOf="@id/login_circle_1" />
 
     <com.google.android.material.textfield.TextInputLayout
-        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
         android:id="@+id/login_password_layout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
         android:layout_width="349dp"
         android:layout_height="wrap_content"
         app:startIconDrawable="@drawable/ic_key"
@@ -97,8 +100,7 @@
         app:layout_constraintStart_toStartOf="@id/login_circle_1"
         app:layout_constraintEnd_toEndOf="@id/login_circle_1"
         app:layout_constraintBottom_toBottomOf="@id/login_circle_1"
-        app:layout_constraintTop_toTopOf="@id/login_circle_1"
-        >
+        app:layout_constraintTop_toTopOf="@id/login_circle_1" >
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/login_password_text"
@@ -111,8 +113,8 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
         android:id="@+id/login_username_layout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
         android:layout_width="349dp"
         android:layout_height="wrap_content"
         app:startIconDrawable="@drawable/ic_person"
@@ -177,6 +179,7 @@
 
     <Button
         android:id="@+id/login_back_button"
+        app:shapeAppearanceOverlay="@style/MyBackButtonStyle"
         style="@style/MyBackButtonStyle"
         android:layout_marginStart="29dp"
         android:layout_marginTop="24dp"
