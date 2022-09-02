@@ -3,6 +3,7 @@ package com.dag.odev2fmss
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
 import com.dag.odev2fmss.databinding.ActivityLoginBinding
 import com.dag.odev2fmss.databinding.ActivityMainBinding
 
@@ -23,6 +24,30 @@ class LoginActivity : AppCompatActivity() {
         binding.loginBackButton.setOnClickListener {
             val intent = Intent(this@LoginActivity,MainActivity::class.java)
             startActivity(intent)
+        }
+        loginClicked()
+    }
+
+    private fun loginClicked() {
+        val username = binding.loginUsernameText.text
+        val password = binding.loginPasswordText.text
+
+        binding.loginButton.setOnClickListener {
+            loginCheck(username, password)
+        }
+    }
+
+    private fun loginCheck(username:Editable?, password:Editable?) {
+        if (username?.isEmpty() == true) {
+            binding.loginUsernameLayout.error = " "
+        } else {
+            binding.loginUsernameLayout.error = null
+        }
+
+        if (password?.isEmpty() == true) {
+            binding.loginPasswordLayout.error = " "
+        } else {
+            binding.loginPasswordLayout.error = null
         }
     }
 }
