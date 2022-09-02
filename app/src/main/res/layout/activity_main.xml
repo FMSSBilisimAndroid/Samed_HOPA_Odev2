@@ -6,13 +6,114 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <ImageView
+        android:id="@+id/main_circle_1"
+        android:layout_width="460dp"
+        android:layout_height="460dp"
+        android:layout_marginStart="31dp"
+        android:layout_marginEnd="-63dp"
+        android:layout_marginTop="-106dp"
+        android:layout_marginBottom="572dp"
+        android:background="@drawable/circle_1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+    <ImageView
+        android:id="@+id/main_circle_2"
+        android:layout_width="460dp"
+        android:layout_height="460dp"
+        android:layout_marginStart="183dp"
+        android:layout_marginTop="253dp"
+        android:layout_marginEnd="-183dp"
+        android:layout_marginBottom="-253dp"
+        android:background="@drawable/circle_1"
+        app:layout_constraintStart_toStartOf="@id/main_circle_1"
+        app:layout_constraintEnd_toEndOf="@id/main_circle_1"
+        app:layout_constraintTop_toTopOf="@id/main_circle_1"
+        app:layout_constraintBottom_toBottomOf="@id/main_circle_1"/>
+
+    <ImageView
+        android:id="@+id/main_picture_1"
+        android:layout_width="165.9dp"
+        android:layout_height="248.85dp"
+        android:layout_marginStart="142.92dp"
+        android:layout_marginTop="369.52dp"
+        android:layout_marginEnd="151.18dp"
+        android:layout_marginBottom="-158.38dp"
+        android:paddingBottom="60dp"
+        app:layout_constraintBottom_toBottomOf="@id/main_circle_1"
+        app:layout_constraintEnd_toEndOf="@id/main_circle_1"
+        app:layout_constraintStart_toStartOf="@id/main_circle_1"
+        app:layout_constraintTop_toTopOf="@id/main_circle_1"
+        app:srcCompat="@drawable/picture_1" />
+
+    <ImageView
+        android:id="@+id/main_picture_2"
+        android:layout_width="183.62dp"
+        android:layout_height="103.28dp"
+        android:layout_marginStart="147.03dp"
+        android:layout_marginTop="269.67dp"
+        android:layout_marginEnd="129.35dp"
+        android:layout_marginBottom="87.04dp"
+        app:layout_constraintStart_toStartOf="@id/main_circle_1"
+        app:layout_constraintTop_toTopOf="@id/main_circle_1"
+        app:layout_constraintEnd_toEndOf="@id/main_circle_1"
+        app:layout_constraintBottom_toBottomOf="@id/main_circle_1"
+        android:paddingStart="60dp"
+        app:srcCompat="@drawable/picture_2"
+        tools:ignore="RtlSymmetry" />
+
     <TextView
+        android:id="@+id/main_text_1"
+        android:layout_width="342dp"
+        android:layout_height="190dp"
+        android:layout_marginStart="-181dp"
+        android:layout_marginTop="226dp"
+        android:layout_marginEnd="299dp"
+        android:layout_marginBottom="46dp"
+        android:fontFamily="@font/inter_extrabold"
+        android:gravity="top"
+        android:lineSpacingExtra="-16dp"
+        android:text="@string/let_s_get_started"
+        android:textColor="@color/black"
+        android:textSize="75sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/join_button"
+        app:layout_constraintEnd_toEndOf="@id/main_circle_2"
+        app:layout_constraintStart_toStartOf="@id/main_circle_2"
+        app:layout_constraintTop_toBottomOf="@+id/main_circle_1" />
+
+    <TextView
+        android:id="@+id/main_text_2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="166dp"
+        android:layout_marginEnd="192dp"
+        android:fontFamily="@font/inter_medium"
+        android:text="@string/grow_together"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/main_text_1"
+        app:layout_constraintEnd_toEndOf="@+id/main_text_1"
+        app:layout_constraintStart_toStartOf="@+id/main_text_1"
+        app:layout_constraintTop_toTopOf="@+id/main_text_1" />
+
+    <Button
+        android:id="@+id/join_button"
+        android:layout_width="281dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="74dp"
+        android:layout_marginEnd="73dp"
+        android:layout_marginBottom="48dp"
+        style="@style/MyButtonStyle"
+        android:text="@string/join_now"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/main_text_1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
