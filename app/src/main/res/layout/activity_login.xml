@@ -109,6 +109,8 @@
             android:background="@android:color/transparent"
             android:inputType="textPassword"
             android:hint="@string/password"
+            android:textColor="@color/text_color"
+            android:textColorHint="@color/text_color"
             android:textSize="26sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -135,6 +137,8 @@
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"
             android:hint="@string/username"
+            android:textColor="@color/text_color"
+            android:textColorHint="@color/text_color"
             android:inputType="textPersonName"
             android:textSize="26sp" />
     </com.google.android.material.textfield.TextInputLayout>
