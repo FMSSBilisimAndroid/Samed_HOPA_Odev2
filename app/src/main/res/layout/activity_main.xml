@@ -67,13 +67,14 @@
         app:layout_constraintStart_toStartOf="@id/main_circle_1"
         app:layout_constraintTop_toTopOf="@id/main_circle_1"
         app:layout_constraintEnd_toEndOf="@id/main_circle_1"
-        app:layout_constraintBottom_toBottomOf="@id/main_circle_1" />
+        app:layout_constraintBottom_toBottomOf="@id/main_circle_1"
+        tools:ignore="RtlSymmetry" />
 
     <TextView
         android:id="@+id/main_text_1"
         android:layout_width="342dp"
         android:layout_height="190dp"
-        android:fontFamily="@font/inter_extrabold"
+        android:fontFamily="@font/inter_extra_bold"
         android:gravity="top"
         android:lineSpacingExtra="-16dp"
         android:text="@string/let_s_get_started"

@@ -1,53 +1,70 @@
 package com.dag.odev2fmss
 
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.Editable
+import android.widget.Toast
 import com.dag.odev2fmss.databinding.ActivityLoginBinding
-import com.dag.odev2fmss.databinding.ActivityMainBinding
 
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLoginBinding
+    private lateinit var preferences: SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.loginText1.setOnClickListener {
+        preferences = getSharedPreferences("UserInformation", MODE_PRIVATE)
+        loginNewAccountClicked()
+        loginBackClicked()
+        loginClicked()
+    }
+
+    private fun loginNewAccountClicked() {
+        binding.loginNewAccount.setOnClickListener {
             val intent = Intent(this@LoginActivity,SingUpActivity::class.java)
             startActivity(intent)
         }
+    }
 
+    private fun loginBackClicked() {
         binding.loginBackButton.setOnClickListener {
             val intent = Intent(this@LoginActivity,MainActivity::class.java)
             startActivity(intent)
         }
-        loginClicked()
     }
 
     private fun loginClicked() {
-        val username = binding.loginUsernameText.text
-        val password = binding.loginPasswordText.text
-
-        binding.loginButton.setOnClickListener {
-            loginCheck(username, password)
+        binding.apply {
+            loginButton.setOnClickListener {
+                val username = loginUsernameText.text.toString()
+                val password = loginPasswordText.text.toString()
+                loginCheck(username, password)
+                loginInformationCheck(username, password)
+            }
         }
     }
 
-    private fun loginCheck(username:Editable?, password:Editable?) {
-        if (username?.isEmpty() == true) {
-            binding.loginUsernameLayout.error = " "
-        } else {
-            binding.loginUsernameLayout.error = null
-        }
+    private fun loginCheck(username: String, password: String) {
+        binding.apply {
+            if (username.isEmpty()) loginUsernameLayout.error = " "
+                else loginUsernameLayout.error = null
 
-        if (password?.isEmpty() == true) {
-            binding.loginPasswordLayout.error = " "
+            if (password.isEmpty()) loginPasswordLayout.error = " "
+                else loginPasswordLayout.error = null
+        }
+    }
+
+    private fun loginInformationCheck(username: String, password: String) {
+        val registeredUsername = preferences.getString("username","")
+        val registeredPassword = preferences.getString("password","")
+        if (username == registeredUsername && password == registeredPassword) {
+            Toast.makeText(this, "Login Successful", Toast.LENGTH_SHORT).show()
         } else {
-            binding.loginPasswordLayout.error = null
+            Toast.makeText(this, "Login Failed", Toast.LENGTH_SHORT).show()
         }
     }
 }
